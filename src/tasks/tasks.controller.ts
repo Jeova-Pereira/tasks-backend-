@@ -9,7 +9,7 @@ export class TasksController {
         private readonly tasksService: TasksService
     ){}
 
-    @Get(':id')
+    @Get('/:id')
     async findOnde(@Param('id', ParseIntPipe) id: number){
         return this.tasksService.findOne(id)
     }
