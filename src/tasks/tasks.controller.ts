@@ -9,7 +9,7 @@ export class TasksController {
         private readonly tasksService: TasksService
     ){}
 
-    @Get('/:id')
+    @Get(':id')
     async findOnde(@Param('id', ParseIntPipe) id: number){
         return this.tasksService.findOne(id)
     }
@@ -24,12 +24,12 @@ export class TasksController {
         return this.tasksService.createTasks(body)
     }
 
-    @Patch('/:id')
+    @Patch(':id')
     async updateTasks(@Param('id', ParseIntPipe) id: number, @Body() body:UpdateTasksDto){
         return this.tasksService.updateTasks(id, body)
     }
 
-    @Delete('/:id')
+    @Delete(':id')
     async deleteTasks(@Param('id', ParseIntPipe) id:number){
         return this.tasksService.deleteTasks(id)
     }
